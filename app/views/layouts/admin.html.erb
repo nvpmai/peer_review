@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peer Review Admin</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="ui stackable two column grid">
+      <div class="four wide column" id="menu-col">
+        <%= render 'admins/navbar' %>
+      </div>
+      <div class="twelve wide column" id="main-col">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
