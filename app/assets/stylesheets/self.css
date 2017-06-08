@@ -1,0 +1,15 @@
+#menu-col {
+  width: 22% !important;
+}
+
+.teal.vertical.menu {
+  position: fixed;  
+}
+
+td {
+  font-size: initial;
+}
+
+th {
+  font-size: large;
+}
