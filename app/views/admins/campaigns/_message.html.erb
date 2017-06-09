@@ -1,0 +1,12 @@
+<div class="ui negative message" id="message">
+  <i class="close icon" onclick="removeMessage()"></i>
+  <div class="header">
+    <%= @result.message %>
+  </div>
+</div>
+
+<script>
+  function removeMessage() {
+    $('#message').remove()
+  }
+</script>

@@ -1,0 +1,6 @@
+<% if @result.message %>
+  $('#error-message').html('<%= j render 'message' %>')
+<% else %>
+  $('#user-table').html('<%= j render 'users' %>')
+  $('#email').val('')
+<% end %>

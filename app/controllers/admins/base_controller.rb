@@ -25,6 +25,7 @@ module Admins
     def render_response(data)
       respond_to do |format|
         format.html { @result = data }
+        format.js { @result = data }
       end
     end
   end
