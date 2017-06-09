@@ -1,0 +1,24 @@
+<%= form_tag remove_users_admins_campaign_path(@result.campaign), data: {confirm: 'Are you sure that you want to remove the accounts?'},
+             id: 'form-users-campaign-destroy', method: :delete, remote: true do %>
+  <table class="ui single line table">
+    <thead>
+      <tr>
+        <th width="20px"></th>
+        <th>Email</th>
+        <th>Name</th>
+        <th width="50px"><a class="ui red button" onclick="$('#form-users-campaign-destroy').submit()">Delete</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @result.users.each do |user| %>
+        <tr>
+          <td>
+            <%= check_box_tag 'user_ids[]', user.id, false, id: "user_#{user.id}" %>
+          </td>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -33,8 +33,10 @@ ActiveRecord::Schema.define(version: 20170607170412) do
   end
 
   create_table "participants", force: :cascade do |t|
-    t.integer "user_id",     null: false
-    t.integer "campaign_id", null: false
+    t.integer  "user_id",     null: false
+    t.integer  "campaign_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["campaign_id"], name: "index_participants_on_campaign_id", using: :btree
     t.index ["user_id", "campaign_id"], name: "index_participants_on_user_id_and_campaign_id", unique: true, using: :btree
     t.index ["user_id"], name: "index_participants_on_user_id", using: :btree

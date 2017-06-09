@@ -1,9 +1,5 @@
-#menu-col {
-  width: 22% !important;
-}
-
-.teal.vertical.menu {
-  position: fixed;  
+.ui.form .field > label {
+  font-size: initial !important;
 }
 
 td {
@@ -12,4 +8,28 @@ td {
 
 th {
   font-size: large;
+}
+
+.field input {
+  font-size: initial;
+}
+
+.teal.vertical.menu {
+  position: fixed;  
+}
+
+.ui.vertical.segment {
+  border-bottom: none;
+}
+
+.ui.vertical.segment > .button {
+  font-size: 16px;
+}
+
+#menu-col {
+  width: 22% !important;
+}
+
+#campaign-user {
+  margin-top: 30px;
 }

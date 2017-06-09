@@ -1,0 +1,24 @@
+<div class="ui modal small" id="new_campaign_modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Create new campaign
+  </div>
+  <div class="content">
+    <%= form_tag '/admins/campaigns', method: 'post', class: 'ui form', id: 'new_campaign_form', remote: true do %>
+      <div class="field">
+        <label for="name">Enter new campaign's name</label>
+        <input id="name" type="text" name="name"/>
+      </div>
+      <div class="ui submit button">Submit</div>
+      <div class="ui error message"></div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#new_campaign_form').form({
+    fields: {
+      'name': ['empty']
+    }
+  })
+</script>

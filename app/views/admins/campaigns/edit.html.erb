@@ -1,0 +1,35 @@
+<div class="ui vertical segment">
+  <h1 class="ui header">Edit campaign</h1>
+  <%= form_for [:admins, @result.campaign], html: { class: 'ui form' }, remote: true do |f| %>
+    <div class="inline field">
+      <label for="name">Name</label>
+      <%= f.text_field :name, size: '90' %>
+    </div>
+    <button type="submit" class="ui button">Save</button>
+  <% end %>
+
+  <%= form_tag add_user_admins_campaign_path(@result.campaign), id: 'campaign-user', class: 'ui form', remote: true do -%>
+      <div class="field">
+        <label for="email">Enter participant's email</label>
+        <div class="inline field">
+          <input type="text" name="email" id="email" size="60"/>
+          <button class="ui button">Add</button>
+        </div>
+      </div>
+      <div class="ui error message"></div>
+      <div id="error-message">
+      </div>
+  <% end -%>
+
+  <div id="user-table">
+    <%= render 'users' %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#campaign-user').form({
+    fields: {
+      'email': ['email']
+    }
+  })
+</script>
