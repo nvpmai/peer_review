@@ -3,4 +3,5 @@ class Campaign < ApplicationRecord
 
 	has_many :users, -> { order('participants.created_at desc') }, through: :participants
 	has_many :participants
+	has_many :feedbacks
 end

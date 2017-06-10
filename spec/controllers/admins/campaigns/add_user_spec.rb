@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admins::CampaignsController, type: :controller do
-  include AuthHelper
-
   let(:campaign) { create(:campaign) }
   let(:user) { create(:user) }
 

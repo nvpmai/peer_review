@@ -1,0 +1,23 @@
+<div>
+  <%= form_for :session, url: sessions_path, html: {class: 'ui form', id: 'new_session_form'}, remote: true do |f| %>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="ui button submit">Submit</div>
+    <div class="ui error message"></div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('#new_session_form').form({
+    fields: {
+      'session[email]': ['email'],
+      'session[password]': ['empty']
+    }
+  })
+</script>

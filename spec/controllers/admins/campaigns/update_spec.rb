@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admins::CampaignsController, type: :controller do
-  include AuthHelper
-
   describe 'PUT #update' do
     it 'should update campaign' do
       http_login

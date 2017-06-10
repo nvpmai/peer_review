@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admins::CampaignsController, type: :controller do
-  include AuthHelper
-
   describe 'POST #create' do
     it 'should create campaign' do
       http_login
