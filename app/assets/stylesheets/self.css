@@ -38,12 +38,33 @@ th {
   font-size: 16px;
 }
 
+.ui.form input {
+  font-size: initial !important;
+}
+
 .ui.form .inline.field > input {
   font-size: initial;
 }
 
 .edit-campaign-form {
   margin-top: 80px;
+}
+
+.ui.button {
+  font-size: initial !important;
+}
+
+.error_field {
+  box-shadow: 0 0 0 1px #E0B4B4 inset, 0 0 0 0 transparent;
+  color: #9F3A38;
+  border-radius: .28571429rem;
+  position: relative;
+  min-height: 1em;
+  margin: 1em 0;
+  background: #F8F8F9;
+  padding: 1em 1.5em;
+  line-height: 1.4285em;
+  display: none;
 }
 
 #menu-col {

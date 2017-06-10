@@ -14,6 +14,7 @@ class CampaignsController < ApplicationController
   end
 
   def index
+    @campaigns = current_user.campaigns
   end
 
   private

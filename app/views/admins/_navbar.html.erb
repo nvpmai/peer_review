@@ -1,14 +1,22 @@
 <div class="ui teal inverted vertical menu huge">
-  <a class="active item" href="/admins">
+  <a class="item <%= active_nav('campaigns') %>" href="/admins">
     Campaigns
   </a>
-  <a class="item">
+  <a class="item <%= active_nav('users') %>" href="/admins/users">
     Users
   </a>
   <div class="item">
     <div class="ui icon input">
-      <input type="text" placeholder="Search mail...">
-      <i class="search icon"></i>
+      <%= form_tag '/admins', method: 'get', id: 'search_campaign_form' do %>
+        <input name="term" size="18" type="text" placeholder="Search campaign...">
+      <% end %>
+      <i class="search icon" onclick="submitForm()"></i>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function submitForm() {
+    $('#search_campaign_form').submit()
+  }
+</script>
