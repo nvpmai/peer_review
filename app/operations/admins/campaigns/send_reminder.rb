@@ -2,9 +2,7 @@ module Admins
   module Campaigns
     class SendReminder < Operation
       def process
-        campaign.users.each do |user|
-          ReminderMailer.update_feedback_email(user, campaign).deliver_later unless user.is_fake
-        end
+        send_mail
         result.new('Mails have been sent to all participants')
       end
 
@@ -15,6 +13,12 @@ module Admins
 
       def result
         Struct.new(:message)
+      end
+
+      def send_mail
+        campaign.users.each do |user|
+          ReminderMailer.update_feedback_email(user, campaign).deliver_later unless user.is_fake
+        end
       end
     end
   end

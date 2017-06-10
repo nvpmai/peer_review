@@ -10,7 +10,8 @@
     Send feedback reminder email
   </a>
   <a data-method='post'
-     data-confirm="Are you sure? Closed campaign will not accept feedback, not be editable and reopened"
+     data-remote="true"
+     data-confirm="Are you sure? Closed campaign will not accept feedback, cannot be editable and reopened. Mails for informing about this event will be sent."
      class="ui red button"
      href="<%= close_admins_campaign_path(@result.campaign) %>">
     Close

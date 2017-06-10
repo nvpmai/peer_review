@@ -2,6 +2,7 @@
   <h1 class="ui header"><%= @campaign.name %></h1>
 </div>
 
+<h1 class="ui header medium" id="show-campaign-header">Participants</h1>
 <table class="ui single line table">
   <thead>
   <tr>
@@ -10,7 +11,7 @@
   </tr>
   </thead>
   <tbody>
-  <% @result.users.each do |user| %>
+  <% @campaign.users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
