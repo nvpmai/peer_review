@@ -1,3 +1,32 @@
 <div class="container ui center aligned">
-  <div class="ui header huge" id="campaign-name-feedbacks">Hi <%= current_user.name %></div>
+  <% if @campaigns.count > 0 %>
+      <div class="ui header huge" id="campaign-name-feedbacks">Your campaigns</div>
+      <table class="ui celled padded table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th width="18px">Status</th>
+          <th width="400px"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @campaigns.each do |campaign| %>
+            <tr>
+              <td><%= campaign.name %></td>
+              <td>
+                <%= campaign.is_open ? 'Open' : 'Close' %>
+              </td>
+              <td>
+                <a class="ui teal button" href="<%= view_feedbacks_campaign_path(campaign) %>">View feedbacks</a>
+                <% if campaign.is_open %>
+                  <a class="ui blue button" href="<%= give_feedbacks_campaign_path(campaign) %>">Give feedbacks</a>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+  <% else %>
+      <div class="ui header large">You have no campaign!</div>
+  <% end %>
 </div>

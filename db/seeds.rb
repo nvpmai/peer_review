@@ -1,7 +1,7 @@
 50.times do
-  Campaign.create(name: Faker::Hacker.say_something_smart)
+  Campaign.create(name: Faker::Company.catch_phrase)
 end
 
-20.times do
-  User.create(email: Faker::Internet.email, name: Faker::Name.name, password: '1234', is_fake: true)
+50.times do
+  User.create(email: Faker::Internet.email, name: Faker::Name.name, password: '123456', is_fake: true)
 end

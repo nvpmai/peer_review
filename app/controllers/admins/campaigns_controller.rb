@@ -1,9 +1,13 @@
 module Admins
   class CampaignsController < BaseController
     before_action :require_open, only: [:edit, :update, :add_user, :remove_users, :close, :send_reminder]
-    before_action :execute, except: [:create, :multiple_destroy, :show]
+    before_action :execute, except: [:index, :create, :multiple_destroy, :show]
 
     def index
+      respond_to do |format|
+        format.html { @result = campaigns }
+        format.js { @result = campaigns }
+      end
     end
 
     def show
@@ -30,9 +34,8 @@ module Admins
       respond_to do |format|
         if params[:campaign_ids].present?
           Campaign.where(id: params[:campaign_ids]).destroy_all
-          flash[:success] = 'Delete campaigns successfully!'
         end
-        format.js
+        format.js { @result = campaigns }
       end
     end
 
@@ -48,6 +51,10 @@ module Admins
     private
     def campaign
       @campaign ||= Campaign.find(params[:id])
+    end
+
+    def campaigns
+      @campaigns = Campaign.where('name ILIKE ?', "%#{params[:term]}%").order(created_at: :desc).page(params[:page]).per(15)
     end
 
     def require_open

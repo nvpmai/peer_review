@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   namespace :admins do
     get '/', to: 'campaigns#index'
 
+    resources :users, only: [:create, :index]
+
     resources :campaigns do
       delete 'multiple_destroy', on: :collection
 
