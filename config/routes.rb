@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     get '/', to: 'campaigns#index'
+
     resources :campaigns do
       delete 'multiple_destroy', on: :collection
 
@@ -18,9 +19,11 @@ Rails.application.routes.draw do
   resources :campaigns, only: [] do
     member do
       get 'give_feedbacks'
+      get 'view_feedbacks'
       post 'update_feedback'
     end
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create]
+  delete '/logout' => 'sessions#destroy'
 end

@@ -1,0 +1,25 @@
+<div class="container ui center aligned">
+  <div class="ui header huge" id="campaign-name-feedbacks"><%= @result.campaign.name %></div>
+  <% if @result.users.size > 0 %>
+    <table class="ui single line table">
+      <thead>
+      <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @result.users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.name %></td>
+          <td><%= user.content %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="ui header large">You got no feedback from others!</div>
+  <% end %>
+</div>

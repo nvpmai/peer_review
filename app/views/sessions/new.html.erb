@@ -1,15 +1,16 @@
-<div>
+<div class="container ui center aligned">
+  <div class="ui header huge" id="campaign-name-feedbacks">Please login before continue</div>
   <%= form_for :session, url: sessions_path, html: {class: 'ui form', id: 'new_session_form'}, remote: true do |f| %>
-    <div class="field">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </div>
-    <div class="ui button submit">Submit</div>
-    <div class="ui error message"></div>
+      <div class="inline field">
+        <%= f.label :email %>
+        <%= f.email_field :email, size: '50' %>
+      </div>
+      <div class="inline field">
+        <%= f.label :password %>
+        <%= f.password_field :password, size: '50' %>
+      </div>
+      <div class="ui error message container ui"></div>
+      <div class="ui button submit">Submit</div>
   <% end %>
 </div>
 

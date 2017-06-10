@@ -58,3 +58,15 @@ th {
   margin-bottom: 40px;
   margin-top: 30px;
 }
+
+#new_session_form label {
+  width: 90px;
+}
+
+#new_session_form .error.message {
+  width: 300px;
+}
+
+#show-campaign-header {
+  margin-top: 80px;
+}
