@@ -38,6 +38,14 @@ th {
   font-size: 16px;
 }
 
+.ui.form .inline.field > input {
+  font-size: initial;
+}
+
+.edit-campaign-form {
+  margin-top: 80px;
+}
+
 #menu-col {
   width: 22% !important;
 }

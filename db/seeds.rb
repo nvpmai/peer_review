@@ -3,5 +3,5 @@
 end
 
 20.times do
-  User.create(email: Faker::Internet.email, name: Faker::Name.name, password: '1234')
+  User.create(email: Faker::Internet.email, name: Faker::Name.name, password: '1234', is_fake: true)
 end
