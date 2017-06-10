@@ -1,5 +1,17 @@
+textarea {
+  font-size: initial !important;
+}
+
 .ui.form .field > label {
   font-size: initial !important;
+}
+
+.ui.menu .item {
+  font-size: large;
+}
+
+#feedback-sumbit-btn {
+  font-size: large;
 }
 
 td {
@@ -31,5 +43,10 @@ th {
 }
 
 #campaign-user {
+  margin-top: 30px;
+}
+
+#campaign-name-feedbacks {
+  margin-bottom: 40px;
   margin-top: 30px;
 }

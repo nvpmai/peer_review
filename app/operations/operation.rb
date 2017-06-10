@@ -1,8 +1,9 @@
 class Operation
-  attr_accessor :params, :request_obj
+  attr_accessor :params, :current_user
 
-  def initialize(params)
+  def initialize(params, current_user = nil)
     @params = params
+    @current_user = current_user
   end
 
   def execute

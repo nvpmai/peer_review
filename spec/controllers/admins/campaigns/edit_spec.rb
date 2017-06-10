@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Admins::CampaignsController, type: :controller do
-  include AuthHelper
-
   describe 'GET #edit' do
     it 'should return campaign and participants' do
       http_login

@@ -1,0 +1,19 @@
+<div class="container ui center aligned">
+  <div class="ui header huge" id="campaign-name-feedbacks"><%= @result.campaign.name %></div>
+  <% @result.users.each do |user| %>
+    <%= form_tag update_feedback_campaign_path(@result.campaign), class: 'ui form', remote: true do %>
+      <input type="hidden" value="<%= user.id %>" name="receiver_id">
+      <div class="fields">
+        <div class="four wide field">
+          <label><%= user.name %></label>
+        </div>
+        <div class="ten wide field">
+          <textarea name="content" rows="4"><%= user.content %></textarea>
+        </div>
+        <div class="two wide field">
+          <button class="ui button submit" id="feedback-sumbit-btn">Save</button>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

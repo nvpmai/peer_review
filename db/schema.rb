@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 20170607170412) do
   end
 
   create_table "feedbacks", force: :cascade do |t|
-    t.text     "content",        null: false
-    t.integer  "participant_id", null: false
-    t.integer  "user_id",        null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["participant_id", "user_id"], name: "index_feedbacks_on_participant_id_and_user_id", unique: true, using: :btree
-    t.index ["participant_id"], name: "index_feedbacks_on_participant_id", using: :btree
-    t.index ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
+    t.text     "content",     null: false
+    t.integer  "giver_id",    null: false
+    t.integer  "receiver_id", null: false
+    t.integer  "campaign_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["campaign_id"], name: "index_feedbacks_on_campaign_id", using: :btree
+    t.index ["giver_id", "receiver_id", "campaign_id"], name: "index_feedbacks_on_giver_id_and_receiver_id_and_campaign_id", unique: true, using: :btree
   end
 
   create_table "participants", force: :cascade do |t|
@@ -50,8 +50,7 @@ ActiveRecord::Schema.define(version: 20170607170412) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "feedbacks", "participants"
-  add_foreign_key "feedbacks", "users"
+  add_foreign_key "feedbacks", "campaigns"
   add_foreign_key "participants", "campaigns"
   add_foreign_key "participants", "users"
 end

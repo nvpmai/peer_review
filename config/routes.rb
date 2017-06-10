@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'campaigns#index'
+
   namespace :admins do
     get '/', to: 'campaigns#index'
     resources :campaigns do
@@ -10,4 +12,13 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :campaigns, only: [] do
+    member do
+      get 'give_feedbacks'
+      post 'update_feedback'
+    end
+  end
+
+  resources :sessions, only: [:new, :create, :destroy]
 end
