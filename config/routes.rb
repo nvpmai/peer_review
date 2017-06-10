@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
       member do
         post 'add_user'
+        post 'close'
+        post 'send_reminder'
         delete 'remove_users'
       end
     end
